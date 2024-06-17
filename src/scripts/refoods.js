@@ -2,7 +2,6 @@ const refoods = [{
   idLimbah: 'limbah-1',
   jenis: 'Nasi Basi',
   deskripsi: 'Nasi basi merupakan nasi yang telah berbau dan warnanya telah berubah sehingga tidak layak untuk dikonsumsi.',
-  picture: '/images/Nasi.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-1',
@@ -17,7 +16,6 @@ const refoods = [{
   idLimbah: 'limbah-2',
   jenis: 'Kulit Pisang',
   deskripsi: 'Setelah mengonsumsi pisang, biasanya kulitnya dibuang begitu saja.',
-  picture: '/images/banana.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-2',
@@ -32,7 +30,6 @@ const refoods = [{
   idLimbah: 'limbah-3',
   jenis: 'Ampas Kopi',
   deskripsi: 'Kopi sering kali digunakan dalam berbagai olahan makanan, namun ampas kopi seringkali dibuang begitu saja.',
-  picture: '/images/kopi.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-3',
@@ -47,14 +44,12 @@ const refoods = [{
   idLimbah: 'limbah-4',
   jenis: 'Kulit Apel',
   deskripsi: 'Jika seseorang memakan apel, kebanyakan kulitnya akan dibuang, padahal kulit apel bisa diolah untuk dikonsumsi.',
-  picture: '/images/apel.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-4',
       teks: 'Kerupuk panggang dari kulit apel. Cara membuat: Campur kulit apel dengan mentega cair dan gula kayu manis. Panggang hingga kecoklatan dan matang.',
       idUser: 'user-4',
       namaLengkap: 'Udin',
-
       createdAt: '',
     },
   ],
@@ -63,7 +58,6 @@ const refoods = [{
   idLimbah: 'limbah-5',
   jenis: 'Cangkang Telur',
   deskripsi: 'Cangkang telur yang sering kali dibuang setelah mengonsumsi telur dapat menyebabkan bertambahnya limbah makanan.',
-  picture: '/images/telur.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-5',
@@ -78,7 +72,6 @@ const refoods = [{
   idLimbah: 'limbah-6',
   jenis: 'Susu Basi',
   deskripsi: 'Susu yang telah disimpan terlalu lama hingga basi.',
-  picture: '/images/susu.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-6',
@@ -93,7 +86,6 @@ const refoods = [{
   idLimbah: 'limbah-7',
   jenis: 'Ampas Teh Hijau',
   deskripsi: 'Ampas yang tersisa setelah menyeduh teh hijau, kaya akan antioksidan dan zat-zat aktif lainnya yang bermanfaat untuk kulit.',
-  picture: '/images/teh.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-7',
@@ -108,7 +100,6 @@ const refoods = [{
   idLimbah: 'limbah-8',
   jenis: 'Kulit Wortel',
   deskripsi: 'Kulit tipis yang biasanya dibuang saat memotong wortel. Kaya akan serat dan nutrisi lainnya yang baik untuk kesehatan pencernaan dan kulit.',
-  picture: '/images/wortel.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-8',
@@ -123,7 +114,6 @@ const refoods = [{
   idLimbah: 'limbah-9',
   jenis: 'Ikan Busuk',
   deskripsi: 'Ikan yang sudah mengalami proses pembusukan alami atau disengaja, biasanya menghasilkan rasa yang khas dan unik setelah diolah dengan bumbu dan rempah-rempah tertentu.',
-  picture: '/images/ikan.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-9',
@@ -138,7 +128,6 @@ const refoods = [{
   idLimbah: 'limbah-10',
   jenis: 'Biji dan Kulit Salak',
   deskripsi: 'Biji dan kulit salak yang telah dikumpulkan setelah mengonsumsi buah salak, kaya akan serat dan antioksidan yang baik untuk kesehatan.',
-  picture: '/images/salak.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-10',
@@ -153,7 +142,6 @@ const refoods = [{
   idLimbah: 'limbah-11',
   jenis: 'Kulit Bawang',
   deskripsi: 'Kulit yang biasanya dibuang saat memotong bawang putih, bawang merah, atau bawang bombay, kaya akan antioksidan dan flavonoid yang bermanfaat untuk kesehatan.',
-  picture: '/images/bawang.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-11',
@@ -168,7 +156,6 @@ const refoods = [{
   idLimbah: 'limbah-12',
   jenis: 'Kulit Jeruk',
   deskripsi: 'Kulit jeruk yang telah dipisahkan dari buahnya, mengandung minyak esensial yang dapat digunakan sebagai pembersih alami dan juga dapat diolah menjadi pupuk.',
-  picture: '/images/jeruk.png',
   caraPengolahan: [
     {
       idPengolahan: 'olah-12',

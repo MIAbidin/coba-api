@@ -7,7 +7,7 @@ const addRefoodHandler = (request, h) => {
   const idPengolahan = nanoid(16);
   const createdAt = new Date().toISOString();
 
-  const newOlah = { teks, idPengolahan, username, createdAt };
+  const newOlah = { idPengolahan, teks, username, createdAt };
 
   const refoodIndex = refoods.findIndex((refood) => refood.idLimbah === idLimbah);
 
@@ -19,8 +19,8 @@ const addRefoodHandler = (request, h) => {
       message: 'Cara pengolahan berhasil ditambahkan',
       data: {
         pengolahanId: idPengolahan,
-        username: newOlah.username,
         teks: newOlah.teks,
+        username: newOlah.username,
         createdAt: newOlah.createdAt,
       },
     }).code(201);
@@ -44,15 +44,10 @@ const getRefoodByIdHandler = (request, h) => {
   const refood = refoods.find((refood) => refood.idLimbah === idLimbah);
 
   if (refood) {
-    const refoodWithImage = {
-      ...refood,
-      image: request.server.info.uri + refood.picture,
-    };
-
     return {
       status: 'success',
       data: {
-        refood: refoodWithImage,
+        refood,
       },
     };
   }
@@ -63,9 +58,10 @@ const getRefoodByIdHandler = (request, h) => {
   }).code(404);
 };
 
+
 const editRefoodHandler = (request, h) => {
   const { idLimbah, idPengolahan } = request.params;
-  const { teks, username } = request.payload;
+  const { teks } = request.payload;
   const updatedAt = new Date().toISOString();
 
   const refoodIndex = refoods.findIndex((refood) => refood.idLimbah === idLimbah);
@@ -73,16 +69,21 @@ const editRefoodHandler = (request, h) => {
     const olahanIndex = refoods[refoodIndex].caraPengolahan.findIndex((olah) => olah.idPengolahan === idPengolahan);
 
     if (olahanIndex !== -1) {
-      refoods[refoodIndex].caraPengolahan[olahanIndex] = {
-        ...refoods[refoodIndex].caraPengolahan[olahanIndex],
-        teks,
-        username,
-        updatedAt,
-      };
+      refoods[refoodIndex].caraPengolahan[olahanIndex].teks = teks;
+      refoods[refoodIndex].caraPengolahan[olahanIndex].updatedAt = updatedAt;
+
+      const updatedOlahan = refoods[refoodIndex].caraPengolahan[olahanIndex];
 
       return h.response({
         status: 'success',
         message: 'Cara pengolahan berhasil diperbarui',
+        data: {
+          pengolahanId: updatedOlahan.idPengolahan,
+          teks: updatedOlahan.teks,
+          username: updatedOlahan.username,
+          createdAt: updatedOlahan.createdAt,
+          updatedAt: updatedOlahan.updatedAt,
+        },
       }).code(200);
     }
   }
@@ -92,6 +93,8 @@ const editRefoodHandler = (request, h) => {
     message: 'Gagal memperbarui cara pengolahan. Id Limbah atau Id Pengolahan tidak ditemukan',
   }).code(404);
 };
+
+
 
 const deleteRefoodHandler = (request, h) => {
   const { idLimbah, idPengolahan } = request.params;

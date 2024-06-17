@@ -1,22 +1,22 @@
 const Hapi = require('@hapi/hapi');
 const Inert = require('@hapi/inert');
-const routes = require('./routes');  // Adjust path as needed
+const routes = require('./routes');
 const path = require('path');
 
-const server = Hapi.server({
-  port: 3000,
-  host: '0.0.0.0',
-  routes: {
-    cors: {
-      origin: ['*'],
-    },
-    files: {
-      relativeTo: path.join(__dirname, '../public')
-    }
-  },
-});
-
 const init = async () => {
+  const server = Hapi.server({
+    port: 3000,
+    host: process.env.NODE_ENV !== 'production' ? 'localhost' : '0.0.0.0',
+    routes: {
+      cors: {
+        origin: ['*'],
+      },
+      files: {
+        relativeTo: path.join(__dirname, '../public')
+      }
+    },
+  });
+
   await server.register(Inert);
 
   server.route(routes);
@@ -41,11 +41,8 @@ const init = async () => {
     },
   });
 
-  await server.initialize(); // Only initialize the server
-
-  console.log(`Server initialized`);
+  await server.start();
+  console.log(`Server berjalan pada ${server.info.uri}`);
 };
 
 init();
-
-module.exports = server.listener;  // Export the server's listener
