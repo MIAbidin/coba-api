@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Refood API</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4f4f4;
+      }
+
+      header {
+        background-color: #4caf50;
+        color: white;
+        padding: 1rem 0;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        opacity: 0.95;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      nav ul li {
+        display: inline;
+        margin: 0 10px;
+      }
+
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+      }
+
+      nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      section {
+        margin-bottom: 20px;
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+
+      tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        width: 100%;
+        bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to Refood API</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#documentation">API Documentation</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="home">
+        <h2>Home</h2>
+        <p>
+          This is the Refood API system where you can manage and process
+          food waste efficiently.
+        </p>
+        <button onclick="showAlert()">Click me for more info!</button>
+      </section>
+      <section id="about">
+        <h2>About</h2>
+        <p>
+          Refood API helps in tracking and managing food waste processing
+          methods.
+        </p>
+      </section>
+      <section id="contact">
+        <h2>Contact</h2>
+        <p>
+          For more information, please contact us at
+          <a href="mailto:info@refood.com">info@refood.com</a>.
+        </p>
+      </section>
+      <section id="documentation">
+        <h2>API Documentation</h2>
+        <p>Here are the details of the available API routes:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Method</th>
+              <th>Path</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>POST</td>
+              <td>/refood/{idLimbah}</td>
+              <td>Add a new refood processing method</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/refood</td>
+              <td>Get all refood data</td>
+            </tr>
+            <tr>
+              <td>GET</td>
+              <td>/refood/{idLimbah}</td>
+              <td>Get refood data by idLimbah</td>
+            </tr>
+            <tr>
+              <td>PUT</td>
+              <td>/refood/{idLimbah}/{idPengolahan}</td>
+              <td>Edit a refood processing method</td>
+            </tr>
+            <tr>
+              <td>DELETE</td>
+              <td>/refood/{idLimbah}/{idPengolahan}</td>
+              <td>Delete a refood processing method</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Refood API. All rights reserved.</p>
+    </footer>
+    <script>
+      function showAlert() {
+        alert("More info about Refood API coming soon!");
+      }
+    </script>
+  </body>
+</html>
